@@ -11,7 +11,7 @@ import {
 type Props = {
   headers: string[];
   body: string[][];
-  selectedColumns: Record<string, string | null>;
+  selectedColumns: Record<number, string | null>;
   onTableHeadSelectChange: (columnIndex: number, value: string | null) => void;
 };
 
@@ -26,8 +26,8 @@ export const ImportTable = ({
       <Table>
         <TableHeader className="bg-muted">
           <TableRow>
-            {headers.map((_item, index) => (
-              <TableHead key={index}>
+            {headers.map((header, index) => (
+              <TableHead key={`header-${index}`}>
                 <TableHeadSelect
                   columnIndex={index}
                   selectedColumns={selectedColumns}
@@ -38,10 +38,12 @@ export const ImportTable = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {body.map((row: string[], index) => (
-            <TableRow key={index}>
-              {row.map((cell, index) => (
-                <TableCell key={index}>{cell}</TableCell>
+          {body.map((row, rowIndex) => (
+            <TableRow key={`row-${rowIndex}`}>
+              {row.map((cell, cellIndex) => (
+                <TableCell key={`cell-${rowIndex}-${cellIndex}`}>
+                  {cell}
+                </TableCell>
               ))}
             </TableRow>
           ))}
