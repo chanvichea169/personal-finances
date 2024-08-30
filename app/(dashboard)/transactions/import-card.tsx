@@ -34,7 +34,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
       const newSelectedColunms = { ...prev };
 
       for (const key in newSelectedColunms) {
-        if (newSelectedColunms[key] == value) {
+        if (newSelectedColunms[key] === value) {
           newSelectedColunms[key] = null;
         }
       }

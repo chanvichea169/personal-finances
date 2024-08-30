@@ -33,7 +33,6 @@ export const ImportTable = ({
                   selectedColumns={selectedColumns}
                   onChange={onTableHeadSelectChange}
                 />
-                {index}
               </TableHead>
             ))}
           </TableRow>
