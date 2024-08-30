@@ -8,13 +8,28 @@ import {
   TableHeader,
 } from "@/components/ui/table";
 
-type Props = {
+interface Props {
+  /**
+   * An array of header strings
+   */
   headers: string[];
+  /**
+   * A 2D array of strings representing the table body
+   */
   body: string[][];
+  /**
+   * An object mapping column indices to selected values (or null)
+   */
   selectedColumns: Record<number, string | null>;
+  /**
+   * A callback function for handling changes to table head selections
+   */
   onTableHeadSelectChange: (columnIndex: number, value: string | null) => void;
-};
+}
 
+/**
+ * A reusable ImportTable component
+ */
 export const ImportTable = ({
   headers,
   body,
