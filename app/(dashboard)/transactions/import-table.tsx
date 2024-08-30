@@ -33,13 +33,14 @@ export const ImportTable = ({
                   selectedColumns={selectedColumns}
                   onChange={onTableHeadSelectChange}
                 />
+                {index}
               </TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
           {body.map((row: string[], index) => (
-            <TableRow>
+            <TableRow key={index}>
               {row.map((cell, index) => (
                 <TableCell key={index}>{cell}</TableCell>
               ))}
