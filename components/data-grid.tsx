@@ -11,12 +11,8 @@ export const DataGrid = () => {
   const { data, isLoading } = useGetSummary();
 
   const params = useSearchParams();
-  const toString = params.get("to") || undefined;
-  const fromString = params.get("from") || undefined;
-
-  // Convert strings to Dates if they are not undefined
-  const to = toString ? new Date(toString) : undefined;
-  const from = fromString ? new Date(fromString) : undefined;
+  const to = params.get("to") || undefined;
+  const from = params.get("from") || undefined;
 
   const dateRangLabel = formatDateRange({ to, from });
 

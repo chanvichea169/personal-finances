@@ -64,16 +64,13 @@ export function filMissingDays(
 }
 
 type Period = {
-  from: Date | undefined;
-  to: Date | undefined;
+  from: string | Date | undefined;
+  to: string | Date | undefined;
 };
 
 export function formatDateRange(period?: Period) {
   const defaultTo = new Date();
   const defaultFrom = subDays(defaultTo, 30);
-
-  const startDate = period?.from || defaultFrom;
-  const endDate = period?.to || defaultTo;
 
   if (!period?.from) {
     return `${format(defaultFrom, "LLL dd")} - ${format(
