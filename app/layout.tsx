@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_Khmer } from "next/font/google";
 import {
   ClerkProvider,
   SignedIn,
@@ -13,7 +13,12 @@ import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import { SheetProvider } from "@/providers/sheet-provider";
 
+// Setup fonts
 const inter = Inter({ subsets: ["latin"] });
+const notoSansKhmer = Noto_Sans_Khmer({
+  subsets: ["khmer"],
+  variable: "--font-khmer",
+});
 
 export const metadata: Metadata = {
   title: "Personal Finance",
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className} ${notoSansKhmer.variable}`}>
           <QueryProvider>
             <SheetProvider />
             <Toaster />

@@ -14,9 +14,6 @@ export const Header = () => {
   const { isSignedIn } = useUser();
 
   const handleRestart = () => {
-    // Perform any actions needed before reload, such as state reset
-
-    // Reload the page
     window.location.reload();
   };
   return (

@@ -26,10 +26,6 @@ const routes = [
     href: "/categories",
     label: "Categories",
   },
-  {
-    href: "#",
-    label: "Setting",
-  },
 ];
 
 export const Navigation = () => {

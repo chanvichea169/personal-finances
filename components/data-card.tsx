@@ -58,6 +58,8 @@ export const DataCard = ({
   dateRange,
   percetageChange = 0,
 }: DataCardProps) => {
+  console.log("Percentage Change:", percetageChange);
+
   return (
     <Card className="border-none drop-shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between gap-x-4">
